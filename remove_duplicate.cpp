@@ -7,13 +7,13 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        unordered_set<int> seen;   // hash table
+        unordered_set<int> h;   // hash table
         int k = 0;
 
         for (int i = 0; i < nums.size(); i++) {
             // if element is not already in hash table
-            if (seen.find(nums[i]) == seen.end()) {
-                seen.insert(nums[i]);   // mark as seen
+            if (h.find(nums[i]) == h.end()) {
+                h.insert(nums[i]);   // mark as seen
                 nums[k] = nums[i];      // place unique element
                 k++;
             }
